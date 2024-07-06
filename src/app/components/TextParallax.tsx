@@ -20,18 +20,21 @@ export default function Home() {
         direction={"left"}
         left={"-40%"}
         progress={scrollYProgress}
+        text={"Web Developer"}
       />
       <Slide
         src={Picture}
         direction={"right"}
         left={"-22%"}
         progress={scrollYProgress}
+        text={"Jakub Madejczyk"}
       />
       <Slide
         src={Picture}
         direction={"left"}
         left={"-75%"}
         progress={scrollYProgress}
+        text={"Web Developer"}
       />
       <div className="h-[50vh]" />
     </main>
@@ -43,6 +46,7 @@ interface SlideProps {
   left: string;
   direction: string | number;
   progress: any;
+  text: string;
 }
 
 const Slide = (props: SlideProps) => {
@@ -57,20 +61,18 @@ const Slide = (props: SlideProps) => {
       style={{ x: translateX, left: props.left }}
       className="relative flex whitespace-nowrap"
     >
-      <Phrase src={props.src} />
-      <Phrase src={props.src} />
-      <Phrase src={props.src} />
+      <Phrase src={props.src} text={props.text} />
+      <Phrase src={props.src} text={props.text} />
+      <Phrase src={props.src} text={props.text} />
     </motion.div>
   );
 };
 
-const Phrase = ({ src }: { src: StaticImageData }) => {
+const Phrase = ({ src, text }: { src: StaticImageData; text: string }) => {
   const font = useAvgardFontLight();
   return (
     <div className={"px-5 flex gap-5 items-center"}>
-      <p className={`${font.className} text-[7.5vw] text-[#c0b3a3]`}>
-        Web Developer
-      </p>
+      <p className={`${font.className} text-[7.5vw] text-[#c0b3a3]`}>{text}</p>
       <span className={`relative h-[7.5vw] aspect-square overflow-hidden mx-8`}>
         <Image
           style={{ objectFit: "cover" }}
