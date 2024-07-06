@@ -28,14 +28,14 @@ export default function Home() {
       {/* <AnimatePresence mode="wait">
         {isLoading && <PreLoader />}
       </AnimatePresence> */}
-      <SmoothScroll />
-      <GlassInfinityAndTextComponent />
-      {/* <ShortAbout />
-      <TextParallax />
-      <div className="flex justify-center">
+      {/* <SmoothScroll />
+      <GlassInfinityAndTextComponent /> */}
+      <ShortAbout />
+      {/* <TextParallax /> */}
+      {/* <div className="flex justify-center">
         <AnimatedParagraph paragraph="I am constantly expanding my skill set to master both front-end and back-end technologies. Whether it's building user-friendly interfaces or developing robust server-side logic, I strive to deliver high-quality solutions that meet modern standards." />
-      </div>
-      <Menu /> */}
+      </div> */}
+      {/* <Menu /> */}
     </main>
   );
 }

@@ -45,7 +45,7 @@ const ShortAbout = () => {
           transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
         >
           <p
-            className={Avgard.className}
+            className={`${Avgard.className} text-3xl sm:text-[64px] sm:leading-[66px]`}
             onMouseEnter={() => {
               setIsTextHovered(true);
             }}
@@ -60,7 +60,9 @@ const ShortAbout = () => {
         </motion.div>
 
         <div className={styles.body}>
-          <p className={Avgard.className}>
+          <p
+            className={`${Avgard.className} text-3xl sm:text-[64px] sm:leading-[66px]`}
+          >
             Hi, I&apos;m a <span>web developer</span> based in Poznan, Poland,
             dedicated to achieving comprehensive knowledge in full-stack
             development.
