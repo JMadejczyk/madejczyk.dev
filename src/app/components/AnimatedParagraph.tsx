@@ -43,7 +43,7 @@ const Word = ({
         children == "front-end" || children == "back-end"
           ? "text-[#ec4e39]"
           : ""
-      }`}
+      } text-2xl sm:text-[40px]  md:text-[60px] leading-[1]`}
     >
       <span className={`${styles.shadow}`}>{children}</span>
       <motion.span style={{ opacity: opacity }}>{children}</motion.span>
