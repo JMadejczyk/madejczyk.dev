@@ -13,17 +13,22 @@ const AnimatedParagraph = ({ paragraph }: { paragraph: string }) => {
   });
   const words = paragraph.split(" ");
   return (
-    <p ref={container} className={`${styles.paragraph} ${font.className}`}>
-      {words.map((word, index) => {
-        const start = index / words.length;
-        const end = start + 1 / words.length;
-        return (
-          <Word key={index} progress={scrollYProgress} range={[start, end]}>
-            {word}
-          </Word>
-        );
-      })}
-    </p>
+    <>
+      <p
+        ref={container}
+        className={`${styles.paragraph} ${font.className} sm:mb-20`}
+      >
+        {words.map((word, index) => {
+          const start = index / words.length;
+          const end = start + 1 / words.length;
+          return (
+            <Word key={index} progress={scrollYProgress} range={[start, end]}>
+              {word}
+            </Word>
+          );
+        })}
+      </p>
+    </>
   );
 };
 

@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <main className="overflow-hidden">
-      <div className="h-[50vh]" />
+      <div className="h-[20vh] sm:h-[50vh]" />
       <Slide
         src={Picture}
         direction={"left"}
@@ -36,7 +36,7 @@ export default function Home() {
         progress={scrollYProgress}
         text={"Web Developer"}
       />
-      <div className="h-[50vh]" />
+      <div className="h-[35vh] sm:h-[50vh]" />
     </main>
   );
 }

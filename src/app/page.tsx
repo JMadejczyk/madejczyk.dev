@@ -25,9 +25,9 @@ export default function Home() {
 
   return (
     <main>
-      <AnimatePresence mode="wait">
+      {/* <AnimatePresence mode="wait">
         {isLoading && <PreLoader />}
-      </AnimatePresence>
+      </AnimatePresence> */}
       <SmoothScroll />
       <GlassInfinityAndTextComponent />
       <ShortAbout />
