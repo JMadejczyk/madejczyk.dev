@@ -4,13 +4,15 @@ import ShortAbout from "./components/ShortAbout";
 import AnimatedParagraph from "./components/AnimatedParagraph";
 import TextParallax from "./components/TextParallax";
 import SmoothScroll from "./components/SmoothScroll";
+import GlassInfinityAndTextComponent from "./components/GlassInfinityAndTextComponent";
 
 export default function Home() {
   return (
     <main>
       <SmoothScroll />
-      <Infinity />
-      <Spectacular />
+      <GlassInfinityAndTextComponent />
+      {/* <Infinity /> */}
+      {/* <Spectacular /> */}
       <ShortAbout />
       <TextParallax />
       <div className="flex justify-center">
