@@ -28,7 +28,7 @@ const GlassInfinityAndTextComponent = () => {
   return (
     <div className="h-[300vh]" ref={container}>
       <div className="sticky top-0 m-auto h-auto">
-        <GlassInfinity isVisible={show == "infinity"} />
+        <GlassInfinity isVisible={show == "infinity"} y={y} />
       </div>
       <div className="sticky top-0 m-auto h-auto ">
         <div className="h-screen flex items-center justify-center">
