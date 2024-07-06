@@ -9,9 +9,13 @@ const Avgard = localFont({
 const Pangaia = localFont({
   src: "../../../public/fonts/PPPangaia-Bold.otf",
 });
+const AvgardLight = localFont({
+  src: "../../../public/fonts/AVGARDN 2.woff",
+});
 
 export const useMontrealFont = () => Montreal;
 
 export const useAvgardFont = () => Avgard;
+export const useAvgardFontLight = () => AvgardLight;
 
 export const usePangaiaFont = () => Pangaia;
