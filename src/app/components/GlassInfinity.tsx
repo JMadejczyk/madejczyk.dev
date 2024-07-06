@@ -7,7 +7,6 @@ import {
   MotionValue,
   useTransform,
 } from "framer-motion";
-import { useEffect, useState } from "react";
 
 const Scene = dynamic(() => import("@/app/components/Scene"), {
   ssr: false,

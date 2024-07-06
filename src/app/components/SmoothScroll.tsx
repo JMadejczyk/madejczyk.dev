@@ -5,11 +5,13 @@ import Lenis from "lenis";
 const SmoothScroll = () => {
   useEffect(() => {
     const lenis = new Lenis();
+    let animationFrameId: number;
     function raf(time: number): void {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      animationFrameId = requestAnimationFrame(raf);
     }
-    requestAnimationFrame(raf);
+    animationFrameId = requestAnimationFrame(raf);
+    return () => cancelAnimationFrame(animationFrameId);
   }, []);
   return <></>;
 };
