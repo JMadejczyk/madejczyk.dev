@@ -22,7 +22,7 @@ const AnimatedShortParagraph = (props: {
       {props.isVisible && (
         <motion.p
           ref={container}
-          className={`${styles.paragraph} ${font.className} justify-center w-[700px]`}
+          className={`${styles.paragraph} ${font.className} justify-center w-[450px] sm:w-[600px] `}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -60,7 +60,7 @@ const Word = ({
         children == "front-end" || children == "back-end"
           ? "text-[#ec4e39]"
           : ""
-      } text-8xl`}
+      } text-5xl sm:text-8xl`}
     >
       <span className={`${styles.shadow}`}>{children}</span>
       <motion.span style={{ opacity: opacity }}>{children}</motion.span>
