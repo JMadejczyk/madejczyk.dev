@@ -6,7 +6,12 @@ const Montreal = localFont({
 const Avgard = localFont({
   src: "../../../public/fonts/AVGARDD 2.woff",
 });
+const Pangaia = localFont({
+  src: "../../../public/fonts/PPPangaia-Bold.otf",
+});
 
 export const useMontrealFont = () => Montreal;
 
 export const useAvgardFont = () => Avgard;
+
+export const usePangaiaFont = () => Pangaia;

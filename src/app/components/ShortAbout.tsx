@@ -51,7 +51,7 @@ const ShortAbout = () => {
             setIsTextHovered(false);
           }}
         >
-          Hi, I&apos;m a Artificial Intelligence student based in Poznan
+          Hi, I&apos;m an Artificial Intelligence student based in Poznan
           University of Technology, dedicated to achieving knowledge in data
           science.
         </p>
