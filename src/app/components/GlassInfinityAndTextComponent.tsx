@@ -2,7 +2,7 @@
 import GlassInfinity from "./GlassInfinity";
 import { useState, useRef, useEffect } from "react";
 import AnimatedShortParagraph from "./AnimatedShortParagraph";
-import { useScroll, AnimatePresence } from "framer-motion";
+import { useScroll, MotionValue } from "framer-motion";
 
 const GlassInfinityAndTextComponent = () => {
   const container = useRef(null);
@@ -10,12 +10,11 @@ const GlassInfinityAndTextComponent = () => {
     target: container,
     offset: ["start start", "end end"],
   });
-  //   console.log(scrollYProgress.get());
-  const [y, setY] = useState<any>(0);
+  const [scrollY, setScrollY] = useState<MotionValue<number>>(scrollYProgress);
 
   useEffect(() => {
     scrollYProgress.on("change", (e) => {
-      setY(scrollYProgress);
+      setScrollY(scrollYProgress);
       if (scrollYProgress.get() < 0.5) {
         setShow("infinity");
       } else {
@@ -28,14 +27,14 @@ const GlassInfinityAndTextComponent = () => {
   return (
     <div className="h-[300vh]" ref={container}>
       <div className="sticky top-0 m-auto h-auto">
-        <GlassInfinity isVisible={show == "infinity"} y={y} />
+        <GlassInfinity isVisible={show == "infinity"} scrollY={scrollY} />
       </div>
       <div className="sticky top-0 m-auto h-auto ">
         <div className="h-screen flex items-center justify-center">
           <AnimatedShortParagraph
             paragraph="to make something spectacular"
             isVisible={show == "text"}
-            y={y}
+            scrollY={scrollY}
           />
         </div>
       </div>

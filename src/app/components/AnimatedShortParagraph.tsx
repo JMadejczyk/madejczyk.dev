@@ -2,8 +2,8 @@
 import {
   AnimatePresence,
   motion,
-  useScroll,
   useTransform,
+  MotionValue,
 } from "framer-motion";
 import React, { useRef } from "react";
 import styles from "@/app/styles/animatedParagraph.module.scss";
@@ -12,7 +12,7 @@ import { usePangaiaFont } from "./FontLoader";
 const AnimatedShortParagraph = (props: {
   paragraph: string;
   isVisible: boolean;
-  y: any;
+  scrollY: MotionValue<number>;
 }) => {
   const font = usePangaiaFont();
   const container = useRef(null);
@@ -32,7 +32,7 @@ const AnimatedShortParagraph = (props: {
             const start = index / words.length;
             const end = start + 1 / words.length;
             return (
-              <Word key={index} progress={props.y} range={[start, end]}>
+              <Word key={index} progress={props.scrollY} range={[start, end]}>
                 {word}
               </Word>
             );

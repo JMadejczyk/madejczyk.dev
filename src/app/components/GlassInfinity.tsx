@@ -1,15 +1,23 @@
 "use client";
 import styles from "@/app/styles/glassInfinity.module.scss";
 import dynamic from "next/dynamic";
-import { AnimatePresence, motion, useTransform } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  MotionValue,
+  useTransform,
+} from "framer-motion";
 import { useEffect, useState } from "react";
 
 const Scene = dynamic(() => import("@/app/components/Scene"), {
   ssr: false,
 });
 
-export default function GlassInfinity(props: { isVisible: boolean; y: any }) {
-  const opacity = useTransform(props.y, [0.1, 0.5], [1, 0]);
+export default function GlassInfinity(props: {
+  isVisible: boolean;
+  scrollY: MotionValue<number>;
+}) {
+  const opacity = useTransform(props.scrollY, [0.1, 0.5], [1, 0]);
   return (
     <motion.main
       key="glass-infinity"
