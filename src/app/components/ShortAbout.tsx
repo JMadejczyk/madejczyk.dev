@@ -4,7 +4,6 @@ import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import useMousePosition from "../lib/useMousePosition";
 import { useAvgardFont } from "@/app/components/FontLoader";
-import { div } from "three/examples/jsm/nodes/Nodes.js";
 
 const ShortAbout = () => {
   const Avgard = useAvgardFont();
@@ -12,9 +11,15 @@ const ShortAbout = () => {
   const [isComponentHovered, setIsComponentHovered] = useState(false);
   const [componentPosition, setComponentPosition] = useState({ y: 0 });
   const { x, y } = useMousePosition();
-  const size = isTextHovered ? 400 : isComponentHovered ? 40 : 0;
+  const deviceWidth = window.innerWidth;
+  const size = isTextHovered
+    ? deviceWidth < 1000
+      ? deviceWidth / 2.5
+      : 400
+    : isComponentHovered
+    ? 40
+    : 0;
   const elementRef = useRef(null);
-
   useEffect(() => {
     if (elementRef.current) {
       const rect = (elementRef.current as HTMLElement).getBoundingClientRect();
