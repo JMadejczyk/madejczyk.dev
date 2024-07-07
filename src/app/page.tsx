@@ -9,6 +9,7 @@ import SmoothScroll from "./components/SmoothScroll";
 import GlassInfinityAndTextComponent from "./components/GlassInfinityAndTextComponent";
 import PreLoader from "./components/PreLoader";
 import Menu from "./components/Menu";
+import Footer from "./components/Footer";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -37,6 +38,7 @@ export default function Home() {
       </div>
       {/* <Menu /> */}
       <div className="w-full h-[20vh]"></div>
+      <Footer />
     </main>
   );
 }
