@@ -10,21 +10,19 @@ const ShortAbout = () => {
   const [isTextHovered, setIsTextHovered] = useState(false);
   const [isComponentHovered, setIsComponentHovered] = useState(false);
   const [componentPosition, setComponentPosition] = useState({ y: 0 });
+  const [maxDotSize, setMaxDotSize] = useState(400);
   const { x, y } = useMousePosition();
-  const deviceWidth = window.innerWidth;
-  const size = isTextHovered
-    ? deviceWidth < 1000
-      ? deviceWidth / 2.5
-      : 400
-    : isComponentHovered
-    ? 40
-    : 0;
+
+  const size = isTextHovered ? maxDotSize : isComponentHovered ? 40 : 0;
+
   const elementRef = useRef(null);
   useEffect(() => {
     if (elementRef.current) {
       const rect = (elementRef.current as HTMLElement).getBoundingClientRect();
       setComponentPosition({ y: rect.top });
     }
+    const deviceWidth = window.innerWidth;
+    setMaxDotSize(deviceWidth < 1000 ? deviceWidth / 2.5 : 400);
   }, [y]);
 
   return (

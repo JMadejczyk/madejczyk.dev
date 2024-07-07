@@ -34,7 +34,7 @@ const GlassInfinityAndTextComponent = () => {
 
   const [show, setShow] = useState("infinity");
   const [showInf, setShowInf] = useState(true);
-  console.log(showInf, show, scrollY.get());
+  // console.log(showInf, show, scrollY.get());
 
   return (
     <div className="h-[300vh]" ref={container}>
