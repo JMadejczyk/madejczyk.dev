@@ -50,7 +50,8 @@ const HireMe = () => {
           >
             call{" "}
           </span>
-          me. I'll be delighted to talk to you and send you a copy of my resume.
+          me. I&apos;ll be delighted to talk to you and send you a copy of my
+          resume.
         </p>
         <p>I am based in Poznan, Poland, but also willing to work remotely.</p>
       </main>

@@ -72,7 +72,10 @@ const Project = ({
           >
             <span className={`${font.className} text-xl h-6`}>JMadejczyk/</span>
             {title.split(" ").map((word) => (
-              <span className={`text-textRed ${font.className} text-xl h-6`}>
+              <span
+                className={`text-textRed ${font.className} text-xl h-6`}
+                key={word}
+              >
                 {word}
               </span>
             ))}
