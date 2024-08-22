@@ -18,6 +18,8 @@ const About = () => {
             alt="self portrait"
             height={300}
             className="rounded-3xl border border-textWhite m-auto"
+            priority={true}
+            quality={100}
           />
         </div>
         <p
