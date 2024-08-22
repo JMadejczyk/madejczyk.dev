@@ -24,7 +24,7 @@ const Logos = ({ scrollProgress }: { scrollProgress: MotionValue<number> }) => {
 
   return (
     <div className="h-fit bg-black overflow-hidden">
-      <motion.div style={{ y }} className="pt-4">
+      <motion.div style={{ y }} className="pt-8">
         <Menu />
       </motion.div>
     </div>
