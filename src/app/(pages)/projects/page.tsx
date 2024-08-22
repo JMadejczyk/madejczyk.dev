@@ -7,26 +7,26 @@ import { useFont } from "@/app/components/FontLoader";
 const projects = [
   {
     title: " madej.art-nextjs",
-    description: "Frontend of photography portfolio website",
+    description: "Frontend of photography portfolio website.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/JMadejczyk/madej.art-nextjs",
   },
   {
     title: " madej.art-api",
-    description: "Backend for admin panel of photography portfolio website",
+    description: "Backend for admin panel of photography portfolio website.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/JMadejczyk/API_madej.art",
   },
   {
     title: "covid- statistics-poland",
     description:
-      "Discord bot providing daily updates about covid pandemic in Poland",
+      "Discord bot providing daily updates about covid pandemic in Poland.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/JMadejczyk/Covid-statistics-Poland",
   },
   {
     title: " sportPerformance",
-    description: "Frontend of website for SportPerformance gym in Poznan",
+    description: "Frontend of website for SportPerformance gym in Poznan.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/JMadejczyk/SportPerformance",
   },
@@ -58,34 +58,34 @@ const Project = ({
   const font = useFont("MontrealMedium");
 
   return (
-    <div className="w-80 h-60 border-textWhite border-[6px] rounded-3xl">
-      <div className="border-b-[4px] border-textWhite h-1/2 flex items-center">
-        <div
-          className={`w-[65%] flex flex-wrap ${
-            title.length > 17
-              ? "ml-14"
-              : title.length > 15
-              ? "ml-[4.5rem]"
-              : "ml-20"
-          } `}
-        >
-          <span className={`${font.className} text-2xl`}>JMadejczyk/</span>
-          {title.split(" ").map((word) => (
-            <span className={`text-textRed ${font.className} text-2xl`}>
-              {word}
-            </span>
-          ))}
+    <Link href={github} target="blank">
+      <div className="w-72 h-52 border-textWhite border-[6px] rounded-3xl hover:scale-105 duration-500">
+        <div className="border-b-[3.5px] border-textWhite h-1/2 flex items-center">
+          <div
+            className={`w-[65%] flex flex-wrap ${
+              title.length > 17
+                ? "ml-12"
+                : title.length > 15
+                ? "ml-16"
+                : "ml-20"
+            } `}
+          >
+            <span className={`${font.className} text-xl h-6`}>JMadejczyk/</span>
+            {title.split(" ").map((word) => (
+              <span className={`text-textRed ${font.className} text-xl h-6`}>
+                {word}
+              </span>
+            ))}
+          </div>
         </div>
-      </div>
 
-      <Link href={github}>
         <div className="w-full h-1/2 flex items-center">
-          <p className={`${font.className} text-xl text-center px-6`}>
+          <p className={`${font.className} text-lg text-center px-6 leading-6`}>
             {description}
           </p>
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };
 
@@ -100,7 +100,7 @@ const Projects = () => {
       >
         Projects
       </h1>
-      <main className="min-h-screen">
+      <main className="min-h-screen mb-10 md:mb-0">
         <div className=" grid md:grid-cols-2 gap-6 w-fit mx-auto">
           <Project {...projects[0]} />
           <Project {...projects[1]} />
