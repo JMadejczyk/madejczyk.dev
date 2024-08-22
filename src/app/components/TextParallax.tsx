@@ -3,7 +3,7 @@ import Picture from "../../../public/images/dev.png";
 import Image, { StaticImageData } from "next/image";
 import { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
-import { useAvgardFontLight } from "./FontLoader";
+import { useFont } from "./FontLoader";
 
 export default function Home() {
   const container = useRef<HTMLDivElement>(null);
@@ -69,7 +69,7 @@ const Slide = (props: SlideProps) => {
 };
 
 const Phrase = ({ src, text }: { src: StaticImageData; text: string }) => {
-  const font = useAvgardFontLight();
+  const font = useFont("AvgardLight");
   return (
     <div className={"px-5 flex gap-5 items-center"}>
       <p className={`${font.className} text-[7.5vw] text-[#c0b3a3]`}>{text}</p>

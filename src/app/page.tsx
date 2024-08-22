@@ -5,11 +5,12 @@ import Infinity from "./components/Infinity";
 import ShortAbout from "./components/ShortAbout";
 import AnimatedParagraph from "./components/AnimatedParagraph";
 import TextParallax from "./components/TextParallax";
-import SmoothScroll from "./components/SmoothScroll";
+// import SmoothScroll from "./components/SmoothScroll";
 import GlassInfinityAndTextComponent from "./components/GlassInfinityAndTextComponent";
 import PreLoader from "./components/PreLoader";
 import Menu from "./components/Menu";
 import Footer from "./components/Footer";
+import useSmoothScroll from "./lib/useSmoothScroll";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,12 +25,14 @@ export default function Home() {
     return () => clearTimeout(timeout);
   }, []);
 
+  useSmoothScroll();
+
   return (
     <main>
       <AnimatePresence mode="wait">
         {isLoading && <PreLoader />}
       </AnimatePresence>
-      <SmoothScroll />
+      {/* <SmoothScroll /> */}
       <GlassInfinityAndTextComponent />
       <ShortAbout />
       <TextParallax />

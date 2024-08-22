@@ -7,14 +7,14 @@ import {
 } from "framer-motion";
 import React, { useRef } from "react";
 import styles from "@/app/styles/animatedParagraph.module.scss";
-import { usePangaiaFont } from "./FontLoader";
+import { useFont } from "./FontLoader";
 
 const AnimatedShortParagraph = (props: {
   paragraph: string;
   isVisible: boolean;
   scrollY: MotionValue<number>;
 }) => {
-  const font = usePangaiaFont();
+  const font = useFont("Pangaia");
   const container = useRef(null);
   const words = props.paragraph.split(" ");
   return (

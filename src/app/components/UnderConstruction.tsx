@@ -1,6 +1,6 @@
-import { useAvgardFontLight } from "../components/FontLoader";
+import { useFont } from "../components/FontLoader";
 const UnderConstruction = () => {
-  const font = useAvgardFontLight();
+  const font = useFont("AvgardLight");
   return (
     <div className="h-screen w-full flex justify-center items-center">
       <h1 className={`${font.className}`}>

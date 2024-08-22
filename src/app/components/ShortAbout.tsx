@@ -3,10 +3,10 @@ import styles from "../styles/shortAbout.module.scss";
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import useMousePosition from "../lib/useMousePosition";
-import { useAvgardFont } from "@/app/components/FontLoader";
+import { useFont } from "@/app/components/FontLoader";
 
 const ShortAbout = () => {
-  const Avgard = useAvgardFont();
+  const Avgard = useFont("Avgard");
   const [isTextHovered, setIsTextHovered] = useState(false);
   const [isComponentHovered, setIsComponentHovered] = useState(false);
   const [componentPosition, setComponentPosition] = useState({ y: 0 });

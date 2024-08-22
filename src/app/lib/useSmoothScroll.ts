@@ -13,6 +13,6 @@ const SmoothScroll = () => {
     animationFrameId = requestAnimationFrame(raf);
     return () => cancelAnimationFrame(animationFrameId);
   }, []);
-  return <></>;
 };
+
 export default SmoothScroll;

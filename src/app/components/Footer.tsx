@@ -13,7 +13,7 @@ const Footer = () => {
   });
 
   return (
-    <div ref={container}>
+    <div ref={container} className="relative">
       <Logos scrollProgress={scrollYProgress} />
     </div>
   );

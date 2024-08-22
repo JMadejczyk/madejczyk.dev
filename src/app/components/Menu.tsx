@@ -1,19 +1,19 @@
-import {
-  useAvgardFont,
-  useAvgardFontLight,
-  usePangaiaFont,
-} from "./FontLoader";
+import { useFont } from "./FontLoader";
 import Link from "next/link";
 
 const Menu = () => {
-  //   const font = usePangaiaFont();
-  const font = useAvgardFontLight();
+  const font = useFont("AvgardLight");
   return (
     <div
       // h-screen
-      className={` flex flex-col w-full justify-center items-center text-3xl sm:text-5xl ${font.className} text-[#c0b3a3] `}
+      className={`flex flex-col w-full justify-center items-center text-3xl sm:text-5xl ${font.className} text-[#c0b3a3]`}
     >
       <div className="border-y border-[#c0b3a3] w-full cursor-pointer">
+        <Link href="/">
+          <div className="border-y border-[#c0b3a3] p-4 flex justify-center hover:text-[#ec4e39] ">
+            <h1>Main</h1>
+          </div>
+        </Link>
         <Link href="/about">
           <div className="border-y border-[#c0b3a3] p-4 flex justify-center hover:text-[#ec4e39] ">
             <h1>About</h1>
@@ -44,6 +44,7 @@ const Menu = () => {
           </div>
         </Link>
       </div>
+      <div className="h-8" />
     </div>
   );
 };

@@ -23,7 +23,7 @@ const Model = () => {
   return (
     <group scale={viewport.width / 5}>
       <Text
-        font={"/fonts/PPNeueMontreal-Bold.otf"}
+        font={"/fonts/NeueMontreal-Bold.otf"}
         position={[0, 0, -1]}
         fontSize={0.8}
         color="#c0b3a3"

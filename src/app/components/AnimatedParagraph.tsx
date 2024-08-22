@@ -2,10 +2,10 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import styles from "@/app/styles/animatedParagraph.module.scss";
-import { usePangaiaFont } from "./FontLoader";
+import { useFont } from "./FontLoader";
 
 const AnimatedParagraph = ({ paragraph }: { paragraph: string }) => {
-  const font = usePangaiaFont();
+  const font = useFont("Pangaia");
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
