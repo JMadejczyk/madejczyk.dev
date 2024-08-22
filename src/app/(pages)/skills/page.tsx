@@ -7,8 +7,8 @@ import { useFont } from "@/app/components/FontLoader";
 
 import typeScript from "@/../public/icons/typeScript.svg";
 import react from "@/../public/icons/react.svg";
-import javaScript from "@/../public/icons/JavaScript.svg";
-import framerMotion from "@/../public/icons/FramerMotion.svg";
+import javaScript from "@/../public/icons/javaScript.svg";
+import framerMotion from "@/../public/icons/framerMotion.svg";
 import nodeJs from "@/../public/icons/nodeJs.svg";
 import nextJs from "@/../public/icons/nextJs.svg";
 import html5 from "@/../public/icons/html5.svg";
