@@ -32,7 +32,6 @@ export default function Home() {
       <AnimatePresence mode="wait">
         {isLoading && <PreLoader />}
       </AnimatePresence>
-      {/* <SmoothScroll /> */}
       <GlassInfinityAndTextComponent />
       <ShortAbout />
       <TextParallax />

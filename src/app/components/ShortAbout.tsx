@@ -11,7 +11,44 @@ const ShortAbout = () => {
   const [isComponentHovered, setIsComponentHovered] = useState(false);
   const [componentPosition, setComponentPosition] = useState({ y: 0 });
   const [maxDotSize, setMaxDotSize] = useState(400);
-  const { x, y } = useMousePosition();
+  const mousePosition = useMousePosition();
+
+  const [dotPosition, setDotPosition] = useState<{
+    x: number | null;
+    y: number | null;
+  }>({ x: 0, y: 0 });
+
+  const calculateDistance = (
+    x1: number | null,
+    y1: number | null,
+    x2: number | null,
+    y2: number | null
+  ) => {
+    if (x1 === null || y1 === null || x2 === null || y2 === null) {
+      return 0;
+    }
+    return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+  };
+
+  const distance = calculateDistance(
+    dotPosition.x,
+    dotPosition.y,
+    mousePosition.x,
+    mousePosition.y
+  );
+
+  useEffect(() => {
+    if (distance > 15) {
+      setDotPosition({ x: mousePosition.x, y: mousePosition.y });
+    }
+  }, [mousePosition, dotPosition, distance]);
+
+  // console.log("dotPosition: ");
+  // console.log(dotPosition);
+  // console.log("x, y: ");
+  // console.log(mousePosition.x, mousePosition.y);
+  // console.log("distance: ");
+  // console.log(distance);
 
   const size = isTextHovered ? maxDotSize : isComponentHovered ? 40 : 0;
 
@@ -23,7 +60,7 @@ const ShortAbout = () => {
     }
     const deviceWidth = window.innerWidth;
     setMaxDotSize(deviceWidth < 1000 ? deviceWidth / 2.5 : 400);
-  }, [y]);
+  }, [mousePosition.y]);
 
   return (
     <div className="h-[170vh]">
@@ -40,8 +77,12 @@ const ShortAbout = () => {
         <motion.div
           className={styles.mask}
           animate={{
-            WebkitMaskPosition: `${x !== null ? x - size / 2 : 0}px ${
-              y !== null ? y - size / 2 - componentPosition.y : 0
+            WebkitMaskPosition: `${
+              dotPosition.x !== null ? dotPosition.x - size / 2 : 0
+            }px ${
+              dotPosition.y !== null
+                ? dotPosition.y - size / 2 - componentPosition.y
+                : 0
             }px`,
             WebkitMaskSize: `${size}px`,
           }}
