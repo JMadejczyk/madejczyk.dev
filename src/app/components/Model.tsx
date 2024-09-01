@@ -8,8 +8,16 @@ const Model = ({ isVisible }: { isVisible: boolean }) => {
   const infinity = useRef(null);
   const { setFrameloop } = state;
 
-  useFrame(() => {
-    (infinity.current as any).rotation.x += 0.02;
+  const fps = 60; // Desired frames per second
+  const frameInterval = 1000 / fps; // Interval in milliseconds
+  let lastFrameTime = 0;
+
+  useFrame((state, delta) => {
+    const currentTime = state.clock.getElapsedTime() * 1000; // Convert to milliseconds
+    if (currentTime - lastFrameTime >= frameInterval) {
+      (infinity.current as any).rotation.x += 0.025;
+      lastFrameTime = currentTime;
+    }
   });
 
   useEffect(() => {
