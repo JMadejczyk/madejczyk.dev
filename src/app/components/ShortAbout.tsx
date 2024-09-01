@@ -50,6 +50,8 @@ const ShortAbout = () => {
   // console.log("distance: ");
   // console.log(distance);
 
+  // TODO - abort component calculations if not in view
+
   const size = isTextHovered ? maxDotSize : isComponentHovered ? 40 : 0;
 
   const elementRef = useRef(null);
