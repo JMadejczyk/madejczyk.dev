@@ -11,6 +11,7 @@ const GlassInfinityAndTextComponent = () => {
     offset: ["start start", "end end"],
   });
   const [scrollY, setScrollY] = useState<MotionValue<number>>(scrollYProgress);
+  const [show, setShow] = useState("infinity");
 
   useEffect(() => {
     const unsubscribe = scrollYProgress.on("change", () => {
@@ -20,11 +21,6 @@ const GlassInfinityAndTextComponent = () => {
       } else if (scrollYProgress.get() > 0.5 && scrollYProgress.get() < 1) {
         setShow("text");
       }
-      if (scrollYProgress.get() > 0.9) {
-        setShowInf(false);
-      } else {
-        setShowInf(true);
-      }
     });
 
     return () => {
@@ -32,16 +28,10 @@ const GlassInfinityAndTextComponent = () => {
     };
   }, [scrollYProgress]);
 
-  const [show, setShow] = useState("infinity");
-  const [showInf, setShowInf] = useState(true);
-  // console.log(showInf, show, scrollY.get());
-
   return (
     <div className="h-[300vh]" ref={container}>
       <div className="sticky top-0 m-auto h-auto">
-        {showInf && (
-          <GlassInfinity isVisible={show == "infinity"} scrollY={scrollY} />
-        )}
+        <GlassInfinity isVisible={show == "infinity"} scrollY={scrollY} />
       </div>
       <div className="sticky top-0 m-auto h-auto ">
         <div className="h-screen flex items-center justify-center">

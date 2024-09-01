@@ -12,7 +12,7 @@ const Scene = (props: { isVisible: boolean }) => {
         props.isVisible ? "" : setTimeout(() => "hidden", 250)
       } h-auto`}
     >
-      <Model />
+      <Model isVisible={props.isVisible} />
       <directionalLight intensity={2} position={[0, 2, 3]} />
       <Environment preset="city" />
     </Canvas>

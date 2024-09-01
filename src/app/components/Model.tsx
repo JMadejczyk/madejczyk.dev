@@ -1,15 +1,20 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useGLTF, Text, MeshTransmissionMaterial } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 
-const Model = () => {
+const Model = ({ isVisible }: { isVisible: boolean }) => {
   const { nodes } = useGLTF("/medias/infinity.glb");
-  const { viewport } = useThree();
+  const state = useThree();
   const infinity = useRef(null);
+  const { setFrameloop } = state;
 
   useFrame(() => {
     (infinity.current as any).rotation.x += 0.02;
   });
+
+  useEffect(() => {
+    isVisible ? setFrameloop("always") : setFrameloop("never");
+  }, [isVisible, setFrameloop]);
 
   const materialProps = {
     thickness: 1.0,
@@ -21,7 +26,7 @@ const Model = () => {
   };
 
   return (
-    <group scale={viewport.width / 5}>
+    <group scale={state.viewport.width / 5}>
       <Text
         font={"/fonts/NeueMontreal-Bold.otf"}
         position={[0, 0, -1]}
