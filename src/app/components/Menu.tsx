@@ -1,11 +1,16 @@
 import { useFont } from "./FontLoader";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 const Menu = () => {
   const font = useFont("AvgardLight");
   const currentPath = usePathname();
   const path = currentPath.split("/")[1];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPath]);
 
   return (
     <div
