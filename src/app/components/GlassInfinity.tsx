@@ -1,12 +1,7 @@
 "use client";
 import styles from "@/app/styles/glassInfinity.module.scss";
 import dynamic from "next/dynamic";
-import {
-  AnimatePresence,
-  motion,
-  MotionValue,
-  useTransform,
-} from "framer-motion";
+import { motion, MotionValue, useTransform } from "framer-motion";
 
 const Scene = dynamic(() => import("@/app/components/Scene"), {
   ssr: false,

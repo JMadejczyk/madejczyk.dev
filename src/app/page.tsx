@@ -1,31 +1,35 @@
 "use client";
 import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
-import Infinity from "./components/Infinity";
+// import Infinity from "./components/Infinity";
 import ShortAbout from "./components/ShortAbout";
 import AnimatedParagraph from "./components/AnimatedParagraph";
 import TextParallax from "./components/TextParallax";
-// import SmoothScroll from "./components/SmoothScroll";
 import GlassInfinityAndTextComponent from "./components/GlassInfinityAndTextComponent";
 import PreLoader from "./components/PreLoader";
-import Menu from "./components/Menu";
+// import Menu from "./components/Menu";
 import Footer from "./components/Footer";
 import useSmoothScroll from "./lib/useSmoothScroll";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIsLoading(false);
-      document.body.style.cursor = "default";
-      window.scrollTo(0, 0);
-    }, 2000);
-
-    return () => clearTimeout(timeout);
-  }, []);
-
   useSmoothScroll();
+
+  useEffect(() => {
+    isLoading
+      ? (document.body.style.position = "fixed")
+      : (document.body.style.position = "relative");
+
+    if (isLoading) {
+      const timeout = setTimeout(() => {
+        setIsLoading(false);
+      }, 2000);
+      return () => {
+        clearTimeout(timeout);
+      };
+    }
+  }, [isLoading]);
 
   return (
     <main>
