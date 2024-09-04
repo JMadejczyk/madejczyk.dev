@@ -1,7 +1,8 @@
 "use client";
 import Footer from "../../components/Footer";
 import useSmoothScroll from "@/app/lib/useSmoothScroll";
-import Image, { StaticImageData } from "next/image";
+import Skill from "./skill";
+import { useState } from "react";
 
 import { useFont } from "@/app/components/FontLoader";
 
@@ -23,6 +24,93 @@ import sql from "@/../public/icons/sql.svg";
 import docker from "@/../public/icons/docker.svg";
 import linux from "@/../public/icons/linux.svg";
 import git from "@/../public/icons/git.svg";
+import Floating from "./floating";
+
+const SkillsPage = () => {
+  useSmoothScroll();
+  const font = useFont("MontrealMedium");
+  // const [iconHovered, setIconHovered] = useState(false);
+  const [hoveredSkill, setHoveredSkill] = useState({
+    skillName: "",
+    skillDescription: "",
+  });
+  console.log("render");
+  // console.log(iconHovered);
+  return (
+    <>
+      <Floating hoveredSkill={hoveredSkill} />
+
+      <div>
+        <main className="min-h-screen flex flex-col justify-center">
+          <h1
+            className={`${font.className} text-2xl text-center my-16 w-80 lg:w-fit mx-auto text-textWhite`}
+          >
+            Technologies which I&apos;ve used and am familiar with
+          </h1>
+          <div className="flex gap-16 flex-col items-center lg:flex-row justify-center">
+            <div className="grid grid-cols-3 gap-5 w-fit">
+              {skillImages.map((skillImage, index) => (
+                <div
+                  key={skills[index]}
+                  onMouseEnter={() => {
+                    setHoveredSkill({
+                      skillName: skills[index],
+                      skillDescription: skillsDescriptions[index],
+                    });
+                  }}
+                  onMouseLeave={() => {
+                    setHoveredSkill({ skillName: "", skillDescription: "" });
+                  }}
+                >
+                  <Skill
+                    skillImage={skillImage}
+                    skill={skills[index]}
+                    variant={index == 4 ? "dark" : ""}
+                  />
+                </div>
+              ))}
+            </div>
+            <div
+              className="grid grid-cols-3 gap-5 w-fit"
+              onMouseOver={(e) => {
+                e.stopPropagation();
+              }}
+            >
+              {skillImages2.map((skillImage, index) => (
+                <div
+                  key={skills2[index]}
+                  onMouseEnter={() => {
+                    setHoveredSkill({
+                      skillName: skills2[index],
+                      skillDescription: skillsDescriptions2[index],
+                    });
+                  }}
+                  onMouseLeave={() => {
+                    setHoveredSkill({ skillName: "", skillDescription: "" });
+                  }}
+                >
+                  <Skill
+                    skillImage={skillImage}
+                    skill={skills2[index]}
+                    variant={index == 4 ? "dark" : ""}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+          <p
+            className={`${font.className} text-xl text-center my-16 w-60 lg:w-fit mx-auto text-textWhite `}
+          >
+            (Probably not up to date. Still learnin’ sth)
+          </p>
+        </main>
+        <Footer />
+      </div>
+    </>
+  );
+};
+
+export default SkillsPage;
 
 const skillImages = [
   typeScript,
@@ -60,6 +148,18 @@ const skills = [
   "css",
 ];
 
+const skillsDescriptions = [
+  "typeScript is freaking awesome",
+  "react is the best",
+  "javaScript is cool",
+  "framerMotion",
+  "nodeJs",
+  "nextJs ",
+  "html5 ",
+  "tailwind ",
+  "css deniecenjicewwniv njiverwvnjiv nijcewd",
+];
+
 const skills2 = [
   "python",
   "github",
@@ -72,72 +172,14 @@ const skills2 = [
   "git",
 ];
 
-const Skill = ({
-  skillImage,
-  skill,
-  variant,
-}: {
-  skillImage: StaticImageData;
-  skill: string;
-  variant?: string;
-}) => {
-  return (
-    <div
-      className={`w-24 h-24  rounded-2xl flex items-center ${
-        variant == "dark"
-          ? "border-textWhite border-2 bg-black"
-          : "bg-textWhite"
-      }`}
-    >
-      <div className=" h-14 w-[4.5rem] flex justify-center m-auto">
-        <Image src={skillImage} alt={skill} />
-      </div>
-    </div>
-  );
-};
-
-const SkillsPage = () => {
-  useSmoothScroll();
-  const font = useFont("MontrealMedium");
-
-  return (
-    <div>
-      <main className="min-h-screen flex flex-col justify-center">
-        <h1
-          className={`${font.className} text-2xl text-center my-16 w-80 lg:w-fit mx-auto text-textWhite`}
-        >
-          Technologies which I&apos;ve used and am familiar with
-        </h1>
-        <div className="flex gap-16 flex-col items-center lg:flex-row justify-center">
-          <div className="grid grid-cols-3 gap-5 w-fit">
-            {skillImages.map((skillImage, index) => (
-              <Skill
-                skillImage={skillImage}
-                key={skills[index]}
-                skill={skills[index]}
-                variant={index == 4 ? "dark" : ""}
-              />
-            ))}
-          </div>
-          <div className="grid grid-cols-3 gap-5 w-fit">
-            {skillImages2.map((skillImage, index) => (
-              <Skill
-                skillImage={skillImage}
-                key={skills2[index]}
-                skill={skills2[index]}
-                variant={index == 4 ? "dark" : ""}
-              />
-            ))}
-          </div>
-        </div>
-        <p
-          className={`${font.className} text-xl text-center my-16 w-60 lg:w-fit mx-auto text-textWhite `}
-        >
-          (Probably not up to date. Still learnin’ sth)
-        </p>
-      </main>
-      <Footer />
-    </div>
-  );
-};
-export default SkillsPage;
+const skillsDescriptions2 = [
+  "python",
+  "github",
+  "expressJs",
+  "sqlite",
+  "nginx",
+  "sql",
+  "docker",
+  "linux",
+  "git",
+];
