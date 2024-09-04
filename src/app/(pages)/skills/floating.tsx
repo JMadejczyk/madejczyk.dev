@@ -15,8 +15,8 @@ const Floating = ({
   hoveredSkill.skillName == "" ? null : (small = false);
 
   useEffect(() => {
-    const animateSequence = async () => {
-      await controls.start({
+    const animateSequence = () => {
+      controls.start({
         y: mousePosition.y ? mousePosition.y + window.scrollY - 100 : 0,
         x: mousePosition.x
           ? mousePosition.x > 100
@@ -30,8 +30,7 @@ const Floating = ({
           duration: 0.7,
         },
       });
-
-      await controls.start({
+      controls.start({
         scale: small ? 0.15 : 1,
         transition: {
           type: "tween",
@@ -40,14 +39,16 @@ const Floating = ({
           delay: 0.05,
         },
       });
-
-      await controls.start({
+      controls.start({
         borderRadius: small ? "5rem" : "1rem",
         transition: { ease: "easeOut", duration: 0.6 },
       });
     };
 
     animateSequence();
+    return () => {
+      controls.stop();
+    };
   }, [mousePosition, small, controls]);
 
   return (
