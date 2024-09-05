@@ -9,13 +9,10 @@ import { useFont } from "@/app/components/FontLoader";
 const SkillsPage = () => {
   useSmoothScroll();
   const font = useFont("MontrealMedium");
-  // const [iconHovered, setIconHovered] = useState(false);
   const [hoveredSkill, setHoveredSkill] = useState({
     skillName: "",
     skillDescription: "",
   });
-  console.log("render");
-  // console.log(iconHovered);
   return (
     <>
       <Floating hoveredSkill={hoveredSkill} />
