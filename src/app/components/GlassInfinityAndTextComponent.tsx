@@ -29,7 +29,7 @@ const GlassInfinityAndTextComponent = () => {
   }, [scrollYProgress]);
 
   return (
-    <div className="h-[300vh]" ref={container}>
+    <div className="h-[300vh] max-w-[1600px] mx-auto" ref={container}>
       <div className="sticky top-0 m-auto h-auto">
         <GlassInfinity isVisible={show == "infinity"} scrollY={scrollY} />
       </div>
