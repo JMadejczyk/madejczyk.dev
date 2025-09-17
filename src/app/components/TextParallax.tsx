@@ -20,7 +20,7 @@ export default function Home() {
         direction={"left"}
         left={"-40%"}
         progress={scrollYProgress}
-        text={"Web Developer"}
+        text={"Software Developer"}
       />
       <Slide
         src={Picture}
@@ -34,7 +34,7 @@ export default function Home() {
         direction={"left"}
         left={"-75%"}
         progress={scrollYProgress}
-        text={"Web Developer"}
+        text={"Software Developer"}
       />
       <div className="h-[35vh] sm:h-[50vh]" />
     </main>

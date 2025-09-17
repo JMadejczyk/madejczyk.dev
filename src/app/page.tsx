@@ -40,7 +40,7 @@ export default function Home() {
       <ShortAbout />
       <TextParallax />
       <div className="flex justify-center">
-        <AnimatedParagraph paragraph="I am constantly expanding my skill set to master both front-end and back-end technologies. Whether it's building user-friendly interfaces or developing robust server-side logic, I strive to deliver high-quality solutions that meet modern standards." />
+        <AnimatedParagraph paragraph="I am continuously expanding my skill set beyond Full-Stack technologies, exploring the foundations of machine learning and artificial intelligence. From crafting user-friendly interfaces to developing robust server-side logic, I strive to create solutions that not only meet modern standards but also implement AI-powered features as I progress in this field." />
       </div>
       {/* <Menu /> */}
       <div className="w-full h-[20vh]"></div>

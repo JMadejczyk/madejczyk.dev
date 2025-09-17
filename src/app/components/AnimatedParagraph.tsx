@@ -42,16 +42,22 @@ const Word = ({
   range: [number, number];
 }) => {
   const opacity = useTransform(progress, range, [0, 1]);
+  const isHighlighted = [
+    "Full-Stack",
+    "machine",
+    "learning",
+    "artificial",
+    "intelligence.",
+    "AI-powered",
+  ].includes(children.toString());
   return (
     <span
       className={`${styles.word} ${
-        children == "front-end" || children == "back-end"
-          ? "text-[#ec4e39]"
-          : ""
-      } text-2xl sm:text-[40px]  md:text-[60px] leading-[1]`}
+        isHighlighted ? "text-[#ec4e39]" : ""
+      } text-2xl sm:text-[40px] md:text-[50px] leading-[1]`}
     >
-      <span className={`${styles.shadow}`}>{children}</span>
-      <motion.span style={{ opacity: opacity }}>{children}</motion.span>
+      <span className={styles.shadow}>{children}</span>
+      <motion.span style={{ opacity }}>{children}</motion.span>
     </span>
   );
 };

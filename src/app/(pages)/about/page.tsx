@@ -25,20 +25,18 @@ const About = () => {
         <p
           className={`text-textWhite ${font.className} max-w-[460px] mx-auto md:mx-0 md:text-lg`}
         >
-          As an{" "}
-          <span className="text-textRed text-nowrap">
-            Artificial Intelligence
-          </span>{" "}
-          student at Poznan University of Technology and a freelance{" "}
-          <span className="text-textRed text-nowrap">Web Developer</span>, I
-          specialize in crafting modern web applications using{" "}
-          <span className="text-textRed text-nowrap">React, Next.js</span>, and
-          other cutting-edge technologies. Passionate about the intersection of{" "}
-          <span className="text-textRed text-nowrap">AI</span> and real-world
-          applications and dedicated to exploring innovative ways to harness the
-          power of data. Let&apos;s collaborate to unlock the potential of AI
-          together.
-          <span className="text-textRed text-nowrap"></span>
+          As a <span className="text-red-500">Full-Stack Developer</span> and{" "}
+          <span className="text-red-500">Artificial Intelligence </span>student{" "}
+          at Poznań University of Technology, I’m expanding my expertise from
+          modern web technologies like{" "}
+          <span className="text-red-500">React</span> and{" "}
+          <span className="text-red-500">Next.js</span> into the world of{" "}
+          <span className="text-red-500">machine learning</span> and{" "}
+          <span className="text-red-500">AI</span>. Driven by curiosity and a
+          passion for solving real-world problems, I’m exploring how data and
+          intelligent systems can enhance applications and user experiences.
+          Let’s connect and grow together in shaping the future of{" "}
+          <span className="text-red-500">AI</span>.
         </p>
         <div className="h-20 md:hidden" />
       </main>

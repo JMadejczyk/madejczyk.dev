@@ -109,8 +109,8 @@ const ShortAbout = () => {
           <p
             className={`${Avgard.className} text-3xl sm:text-[64px] sm:leading-[66px]`}
           >
-            Hi, I&apos;m a <span>web developer</span> based in Poznan, Poland,
-            dedicated to achieving comprehensive knowledge in full-stack
+            Hi, I&apos;m a <span>Software Developer</span> based in Poznan,
+            Poland, dedicated to achieving comprehensive knowledge in full-stack
             development.
           </p>
         </div>
